@@ -1,0 +1,3 @@
+This module provides Task Queueing functionality to a Flask application when running in a multi-threaded, multi process uWSGI environment.
+
+Inter-thread/process task state is maintained through the uWSGI caching functionality and relevant resource locks protect this data during updates to it. Note that the load_tasks and save_tasks functions should not be called directly as this will bypass the resource locking mechanism and lead to integrity corruption of the current task states.
